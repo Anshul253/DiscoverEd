@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "media.collegedekho.com" },
       { protocol: "https", hostname: "www.nitt.edu" },
       { protocol: "https", hostname: "img.collegepravesh.com" },
+      { protocol: "https", hostname: "cse.jadavpuruniversity.in" },
     ],
   },
 };
