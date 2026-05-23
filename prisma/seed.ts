@@ -24,7 +24,7 @@ async function main() {
     "https://images.unsplash.com/photo-1519452286708-3e4776b7db0a?w=800&q=80"
   ];
 
-  const getRandomImages = (count) => {
+  const getRandomImages = (count: number) => {
     const shuffled = [...defaultImages].sort(() => 0.5 - Math.random());
     return JSON.stringify(shuffled.slice(0, count));
   };
