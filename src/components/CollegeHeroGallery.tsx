@@ -26,6 +26,7 @@ export function CollegeHeroGallery({ images, name }: { images: string[], name: s
           src={img}
           alt={`${name} - view ${index + 1}`}
           fill
+          unoptimized
           priority={index === 0}
           className={`object-cover transition-opacity duration-1000 ${
             index === currentIndex ? 'opacity-80' : 'opacity-0'
