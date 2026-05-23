@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "www.catalyser.in" },
       { protocol: "https", hostname: "www.bits-pilani.ac.in" },
       { protocol: "https", hostname: "media.collegedekho.com" },
+      { protocol: "https", hostname: "www.nitt.edu" },
+      { protocol: "https", hostname: "img.collegepravesh.com" },
     ],
   },
 };
