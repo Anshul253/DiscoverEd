@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" width="80" height="80">
+  
+  <h1 align="center">🎓 DiscoverEd</h1>
+  
+  <p align="center">
+    <strong>A modern, full-stack College Discovery & Comparison Platform built with Next.js</strong>
+    <br />
+    <br />
+    <a href="https://github.com/Anshul253/DiscoverEd/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Anshul253/DiscoverEd/issues">Request Feature</a>
+  </p>
 
-## Getting Started
+  <!-- Interactive UI Buttons using Shields.io -->
+  <p align="center">
+    <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAnshul253%2FDiscoverEd">
+      <img src="https://vercel.com/button" alt="Deploy with Vercel" />
+    </a>
+    &nbsp; &nbsp;
+    <a href="https://discovered.vercel.app">
+      <img src="https://img.shields.io/badge/View_Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="View Live Demo" />
+    </a>
+  </p>
 
-First, run the development server:
+  <p align="center">
+    <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+    <img src="https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white" alt="Prisma" />
+    <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite" />
+  </p>
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<hr />
+
+## ✨ Features
+
+* 🔍 **Smart Discovery**: Browse through top engineering colleges with rich, dynamic hero galleries featuring authentic campus photography.
+* ⚖️ **Advanced Comparison**: Add colleges to your comparison tray and evaluate them side-by-side based on fees, ratings, and placement statistics.
+* 🔖 **Save for Later**: Authenticated users can save their favorite colleges to their personalized dashboard.
+* 🔐 **Secure Authentication**: Built-in credential-based authentication using NextAuth.
+* ⚡ **Blazing Fast**: Optimized with Next.js 15 App Router, Turbopack, and automatic image optimizations.
+* 📱 **Fully Responsive**: A beautiful glassmorphic dark-mode UI that works seamlessly across desktop and mobile devices.
+
+<details>
+<summary><b>📸 Click to see a sneak peek of the UI!</b></summary>
+
+*(Add your awesome screenshots here)*
+</details>
+
+## 🚀 Getting Started
+
+Follow these steps to set up the project locally on your machine.
+
+### Prerequisites
+
+Make sure you have [Node.js](https://nodejs.org/) (v18 or higher) and `npm` installed.
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Anshul253/DiscoverEd.git
+   cd DiscoverEd
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up Environment Variables**  
+   Create a `.env` file in the root directory and add the necessary variables:
+   ```env
+   DATABASE_URL="file:./dev.db"
+   NEXTAUTH_SECRET="your-super-secret-string"
+   NEXTAUTH_URL="http://localhost:3000"
+   ```
+
+4. **Initialize the Database**
+   ```bash
+   npx prisma db push
+   npx prisma db seed
+   ```
+
+5. **Run the Development Server**
+   ```bash
+   npm run dev
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Deployment Architecture
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+DiscoverEd uses a modern full-stack architecture that makes deployment a breeze:
+- **Frontend & APIs**: Deployed automatically to [Vercel](https://vercel.com).
+- **Database**: When moving to production, migrate the local SQLite database to a managed PostgreSQL provider (like **Render**, Supabase, or Vercel Postgres).
 
-## Learn More
+Refer to our [`deployment_guide.md`](./deployment_guide.md) for detailed deployment instructions!
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div align="center">
+  Built with ❤️ using Next.js
+</div>
