@@ -37,7 +37,7 @@ export function CollegeCard({ id, name, location, fees, rating, coursesCount, im
 
   return (
     <div 
-      className="glass-panel group hover:shadow-[0_0_25px_rgba(217,70,239,0.2)] transition-all overflow-hidden flex flex-col h-full border-white/20"
+      className="edu-card group flex flex-col h-full overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -57,33 +57,33 @@ export function CollegeCard({ id, name, location, fees, rating, coursesCount, im
           <span className="text-sm font-semibold text-gray-900 dark:text-white">{rating.toFixed(1)}</span>
         </div>
       </div>
-      <div className="p-6 flex-1 flex flex-col bg-white/10 dark:bg-black/20 backdrop-blur-md relative z-10">
-        <h3 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-cyan-400 mb-2 line-clamp-2 leading-tight group-hover:from-cyan-400 group-hover:to-fuchsia-400 transition-all drop-shadow-sm">
+      <div className="p-6 flex-1 flex flex-col bg-white dark:bg-slate-800">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 line-clamp-2 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
           {name}
         </h3>
-        <div className="flex items-center text-gray-500 dark:text-gray-400 mb-5 font-medium text-sm">
-          <MapPin className="w-4 h-4 mr-1.5 shrink-0 text-fuchsia-500" />
+        <div className="flex items-center text-slate-500 dark:text-slate-400 mb-5 font-medium text-sm">
+          <MapPin className="w-4 h-4 mr-1.5 shrink-0 text-blue-600" />
           <span className="truncate">{location}</span>
         </div>
         
-        <div className="mt-auto grid grid-cols-2 gap-4 border-t border-gray-200/20 dark:border-white/10 pt-5 mb-5">
-          <div className="bg-white/20 dark:bg-black/30 rounded-lg p-2.5 border border-white/5">
-            <p className="text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1 font-semibold">Avg Fees/Year</p>
-            <div className="flex items-center text-gray-900 dark:text-white font-bold text-lg">
-              <IndianRupee className="w-4 h-4 text-cyan-400 mr-0.5" />
+        <div className="mt-auto grid grid-cols-2 gap-4 border-t border-slate-100 dark:border-slate-700 pt-5 mb-5">
+          <div className="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-3">
+            <p className="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1 font-semibold">Avg Fees/Year</p>
+            <div className="flex items-center text-slate-900 dark:text-white font-bold text-lg">
+              <IndianRupee className="w-4 h-4 text-slate-700 dark:text-slate-300 mr-0.5" />
               <span>{fees.toLocaleString('en-IN')}</span>
             </div>
           </div>
           {coursesCount !== undefined && (
-            <div className="bg-fuchsia-500/10 rounded-lg p-2.5 border border-fuchsia-500/20">
-              <p className="text-[11px] uppercase tracking-wider text-fuchsia-600 dark:text-fuchsia-400 mb-1 font-semibold">Courses</p>
-              <p className="text-fuchsia-700 dark:text-fuchsia-300 font-bold text-lg">{coursesCount} <span className="text-sm font-medium">Offered</span></p>
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3">
+              <p className="text-[11px] uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-1 font-semibold">Courses</p>
+              <p className="text-blue-700 dark:text-blue-300 font-bold text-lg">{coursesCount} <span className="text-sm font-medium">Offered</span></p>
             </div>
           )}
         </div>
 
         <div className="flex flex-col gap-2.5 pt-2">
-          <Link href={`/colleges/${id}`} className="w-full btn-neon text-center py-2.5 rounded-xl text-sm font-bold transition-all">
+          <Link href={`/colleges/${id}`} className="w-full btn-primary">
             View Details
           </Link>
           <div className="grid grid-cols-2 gap-2">

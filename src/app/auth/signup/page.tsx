@@ -56,12 +56,10 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative z-10">
-      <div className="max-w-md w-full space-y-8 p-8 rounded-2xl glass-panel relative overflow-hidden">
-        {/* Decorative inner glow */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-fuchsia-500 via-cyan-500 to-violet-500 opacity-50"></div>
+    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8 p-8 rounded-2xl edu-card">
         <div>
-          <h2 className="mt-2 text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-cyan-400 drop-shadow-sm">
+          <h2 className="mt-2 text-center text-3xl font-extrabold text-slate-900 dark:text-white">
             Create an account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
@@ -87,7 +85,7 @@ export default function SignupPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="appearance-none relative block w-full px-4 py-3 glass-input rounded-xl focus:z-10 sm:text-sm"
+                className="w-full edu-input"
                 placeholder="you@example.com"
               />
             </div>
@@ -105,7 +103,7 @@ export default function SignupPage() {
                   minLength={6}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none relative block w-full px-4 py-3 glass-input rounded-xl focus:z-10 sm:text-sm pr-10"
+                  className="w-full edu-input pr-10"
                   placeholder="Min 6 characters"
                 />
                 <button
@@ -127,15 +125,15 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex justify-center py-3 px-4 btn-neon disabled:opacity-70"
+              className="w-full btn-primary disabled:opacity-70"
             >
               {isLoading ? "Creating account..." : "Sign up"}
             </button>
           </div>
           
-          <div className="text-center text-sm text-gray-600 dark:text-gray-400">
+          <div className="text-center text-sm text-slate-600 dark:text-slate-400">
             Already have an account?{' '}
-            <Link href="/auth/login" className="font-medium text-fuchsia-500 hover:text-fuchsia-400 dark:text-fuchsia-400 transition-colors drop-shadow-[0_0_8px_rgba(217,70,239,0.5)]">
+            <Link href="/auth/login" className="font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400 transition-colors">
               Sign in
             </Link>
           </div>

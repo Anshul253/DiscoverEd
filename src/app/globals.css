@@ -7,7 +7,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #050211;
+    --background: #0f172a;
     --foreground: #f8fafc;
   }
 }
@@ -17,16 +17,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-
-  --animate-blob: blob 7s infinite;
-  --animate-blob-slow: blob 10s infinite;
-}
-
-@keyframes blob {
-  0% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0px, 0px) scale(1); }
 }
 
 body {
@@ -35,19 +25,15 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Glassmorphism utilities */
-.glass-panel {
-  @apply bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200/50 dark:border-white/10 shadow-xl;
+/* Professional utilities */
+.edu-card {
+  @apply bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md transition-shadow;
 }
 
-.glass-input {
-  @apply bg-white/50 dark:bg-black/40 border border-gray-200/50 dark:border-white/10 text-gray-900 dark:text-white focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent outline-none backdrop-blur-md transition-all placeholder-gray-500 dark:placeholder-gray-400;
+.edu-input {
+  @apply bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all placeholder-slate-400 dark:placeholder-slate-500 rounded-lg px-4 py-3;
 }
 
-.btn-neon {
-  @apply relative overflow-hidden bg-gradient-to-r from-fuchsia-600 to-cyan-600 text-white font-medium rounded-lg shadow-[0_0_15px_rgba(217,70,239,0.5)] hover:shadow-[0_0_25px_rgba(217,70,239,0.8)] transition-all duration-300;
-}
-.btn-neon::before {
-  content: '';
-  @apply absolute inset-0 bg-white/20 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none;
+.btn-primary {
+  @apply flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-sm transition-colors duration-200 px-6 py-2.5;
 }
