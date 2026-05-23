@@ -29,8 +29,13 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-slate-50 dark:bg-[#0a0a0a] text-slate-900 dark:text-slate-100 selection:bg-blue-500/30">
-        <div className="fixed inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/50 via-white to-white dark:from-indigo-900/10 dark:via-[#0a0a0a] dark:to-[#0a0a0a]"></div>
+      <body className="min-h-full flex flex-col bg-slate-50 dark:bg-[#050211] text-slate-900 dark:text-slate-100 selection:bg-fuchsia-500/30 overflow-x-hidden relative">
+        {/* Ambient Background Orbs */}
+        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-fuchsia-500/20 blur-[128px] mix-blend-multiply dark:mix-blend-screen animate-blob"></div>
+          <div className="absolute top-40 -right-40 w-96 h-96 rounded-full bg-cyan-500/20 blur-[128px] mix-blend-multiply dark:mix-blend-screen animate-blob" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute -bottom-40 left-1/2 w-96 h-96 rounded-full bg-violet-500/20 blur-[128px] mix-blend-multiply dark:mix-blend-screen animate-blob" style={{ animationDelay: '4s' }}></div>
+        </div>
         <Navbar />
         <main className="flex-1 flex flex-col relative z-0">{children}</main>
         <CompareFloatingBar />

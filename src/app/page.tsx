@@ -43,8 +43,8 @@ export default async function Home({
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row gap-8">
       {/* Filters Sidebar */}
       <aside className="w-full md:w-72 shrink-0 space-y-6">
-        <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl p-6 rounded-2xl shadow-xl border border-gray-100/50 dark:border-gray-700/50 sticky top-24">
-          <h2 className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 mb-5">Filters</h2>
+        <div className="glass-panel p-6 rounded-2xl sticky top-24 border border-white/10">
+          <h2 className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-cyan-400 drop-shadow-sm mb-5">Filters</h2>
           <form className="space-y-4">
             <div>
               <label htmlFor="search" className="block text-xs font-bold text-gray-600 dark:text-gray-400 mb-1.5 uppercase tracking-wider">Search</label>
@@ -54,7 +54,7 @@ export default async function Home({
                 name="search"
                 defaultValue={search}
                 placeholder="College name..."
-                className="w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-2.5 text-sm text-gray-900 dark:text-white focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all shadow-inner"
+                className="w-full glass-input rounded-xl px-4 py-2.5 text-sm"
               />
             </div>
             <div>
@@ -65,17 +65,17 @@ export default async function Home({
                 name="location"
                 defaultValue={location}
                 placeholder="City or state..."
-                className="w-full rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-2.5 text-sm text-gray-900 dark:text-white focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all shadow-inner"
+                className="w-full glass-input rounded-xl px-4 py-2.5 text-sm"
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-sm font-medium transition-colors"
+              className="w-full btn-neon py-2 text-sm font-medium"
             >
               Apply Filters
             </button>
             {(search || location) && (
-              <Link href="/" className="block w-full text-center text-sm text-blue-600 dark:text-blue-400 hover:underline">
+              <Link href="/" className="block w-full text-center text-sm text-fuchsia-500 hover:text-fuchsia-400 dark:text-fuchsia-400 hover:underline">
                 Clear Filters
               </Link>
             )}
@@ -86,8 +86,8 @@ export default async function Home({
       {/* Main Content */}
       <div className="flex-1">
         <div className="mb-8">
-          <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 tracking-tight">Discover Colleges</h1>
-          <p className="text-gray-500 dark:text-gray-400 mt-2 text-lg">Found <span className="font-bold text-blue-600 dark:text-blue-400">{total}</span> colleges matching your criteria.</p>
+          <h1 className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 to-cyan-500 dark:from-fuchsia-400 dark:to-cyan-400 drop-shadow-[0_0_8px_rgba(217,70,239,0.5)] tracking-tight">Discover Colleges</h1>
+          <p className="text-gray-500 dark:text-gray-400 mt-2 text-lg">Found <span className="font-extrabold text-cyan-400 drop-shadow-[0_0_5px_rgba(34,211,238,0.8)]">{total}</span> colleges matching your criteria.</p>
         </div>
 
         {colleges.length > 0 ? (
@@ -106,7 +106,7 @@ export default async function Home({
             ))}
           </div>
         ) : (
-          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-12 text-center">
+          <div className="glass-panel p-12 text-center rounded-2xl">
             <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">No colleges found</h3>
             <p className="text-gray-500 dark:text-gray-400">Try adjusting your filters to find what you're looking for.</p>
           </div>
@@ -126,10 +126,10 @@ export default async function Home({
                 <Link
                   key={p}
                   href={`/?${params.toString()}`}
-                  className={`px-4 py-2 rounded-md text-sm font-medium ${
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
                     page === p 
-                      ? 'bg-blue-600 text-white' 
-                      : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700'
+                      ? 'btn-neon shadow-[0_0_15px_rgba(217,70,239,0.5)]' 
+                      : 'bg-white/10 dark:bg-black/30 border border-white/10 text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-white/10'
                   }`}
                 >
                   {p}

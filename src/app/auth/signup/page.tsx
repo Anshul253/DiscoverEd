@@ -56,10 +56,12 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950">
-      <div className="max-w-md w-full space-y-8 bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800">
+    <div className="min-h-[calc(100vh-64px)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-md w-full space-y-8 p-8 rounded-2xl glass-panel relative overflow-hidden">
+        {/* Decorative inner glow */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-fuchsia-500 via-cyan-500 to-violet-500 opacity-50"></div>
         <div>
-          <h2 className="mt-2 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="mt-2 text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-cyan-400 drop-shadow-sm">
             Create an account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
@@ -85,7 +87,7 @@ export default function SignupPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-700 placeholder-gray-500 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm bg-white dark:bg-gray-800"
+                className="appearance-none relative block w-full px-4 py-3 glass-input rounded-xl focus:z-10 sm:text-sm"
                 placeholder="you@example.com"
               />
             </div>
@@ -103,7 +105,7 @@ export default function SignupPage() {
                   minLength={6}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-700 placeholder-gray-500 text-gray-900 dark:text-white rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm bg-white dark:bg-gray-800 pr-10"
+                  className="appearance-none relative block w-full px-4 py-3 glass-input rounded-xl focus:z-10 sm:text-sm pr-10"
                   placeholder="Min 6 characters"
                 />
                 <button
@@ -125,7 +127,7 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="group relative w-full flex justify-center py-2.5 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors disabled:opacity-70"
+              className="w-full flex justify-center py-3 px-4 btn-neon disabled:opacity-70"
             >
               {isLoading ? "Creating account..." : "Sign up"}
             </button>
@@ -133,7 +135,7 @@ export default function SignupPage() {
           
           <div className="text-center text-sm text-gray-600 dark:text-gray-400">
             Already have an account?{' '}
-            <Link href="/auth/login" className="font-medium text-blue-600 hover:text-blue-500 dark:text-blue-400">
+            <Link href="/auth/login" className="font-medium text-fuchsia-500 hover:text-fuchsia-400 dark:text-fuchsia-400 transition-colors drop-shadow-[0_0_8px_rgba(217,70,239,0.5)]">
               Sign in
             </Link>
           </div>
