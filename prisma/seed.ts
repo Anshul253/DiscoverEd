@@ -12,22 +12,7 @@ async function main() {
   await prisma.course.deleteMany()
   await prisma.college.deleteMany()
 
-  const defaultImages = [
-    "https://images.unsplash.com/photo-1541339907198-e08756bf0e4e?w=800&q=80",
-    "https://images.unsplash.com/photo-1562774053716-65f018d024f8?w=800&q=80",
-    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80",
-    "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&q=80",
-    "https://images.unsplash.com/photo-1606761568499-6d2451b08f66?w=800&q=80",
-    "https://images.unsplash.com/photo-1525926572898-aa9b0222f6fa?w=800&q=80",
-    "https://images.unsplash.com/photo-1564981797816-1f438e9e2eaa?w=800&q=80",
-    "https://images.unsplash.com/photo-1523580494863-6f30b532ce39?w=800&q=80",
-    "https://images.unsplash.com/photo-1519452286708-3e4776b7db0a?w=800&q=80"
-  ];
 
-  const getRandomImages = (count: number) => {
-    const shuffled = [...defaultImages].sort(() => 0.5 - Math.random());
-    return JSON.stringify(shuffled.slice(0, count));
-  };
 
   // Create Colleges
   const collegesData = [
@@ -37,7 +22,7 @@ async function main() {
       fees: 250000,
       rating: 4.9,
       overview: "IIT Bombay is a globally recognized engineering and research institution.",
-      images: getRandomImages(3),
+      images: "[]",
       courses: {
         create: [
           { name: "B.Tech Computer Science", duration: "4 Years", type: "Full Time" },
@@ -61,7 +46,7 @@ async function main() {
       fees: 166000,
       rating: 4.5,
       overview: "DTU is one of the premier engineering institutions in Delhi, known for strong placements.",
-      images: getRandomImages(3),
+      images: "[]",
       courses: {
         create: [
           { name: "B.Tech Software Engineering", duration: "4 Years", type: "Full Time" },
@@ -85,7 +70,7 @@ async function main() {
       fees: 550000,
       rating: 4.8,
       overview: "BITS Pilani is a top-tier private engineering college known for its zero-attendance policy and entrepreneurial culture.",
-      images: getRandomImages(3),
+      images: "[]",
       courses: {
         create: [
           { name: "B.E. Computer Science", duration: "4 Years", type: "Full Time" },
@@ -109,7 +94,7 @@ async function main() {
       fees: 140000,
       rating: 4.7,
       overview: "NIT Trichy is the top-ranked NIT in India, offering stellar education and placements.",
-      images: getRandomImages(3),
+      images: "[]",
       courses: {
         create: [
           { name: "B.Tech Computer Science", duration: "4 Years", type: "Full Time" }
@@ -132,7 +117,7 @@ async function main() {
       fees: 300000,
       rating: 4.2,
       overview: "VIT Vellore is known for its massive infrastructure and diverse student community.",
-      images: getRandomImages(3),
+      images: "[]",
       courses: {
         create: [
           { name: "B.Tech Computer Science", duration: "4 Years", type: "Full Time" }
@@ -155,7 +140,7 @@ async function main() {
       fees: 230000,
       rating: 4.9,
       overview: "IIT Delhi is a prestigious institute known for its rigorous academic programs and vibrant student life.",
-      images: getRandomImages(3),
+      images: "[]",
       courses: {
         create: [
           { name: "B.Tech Computer Science", duration: "4 Years", type: "Full Time" }
@@ -178,7 +163,7 @@ async function main() {
       fees: 25000,
       rating: 4.6,
       overview: "Jadavpur University offers some of the highest ROI in the country with minimal fees and excellent placements.",
-      images: getRandomImages(3),
+      images: "[]",
       courses: {
         create: [
           { name: "B.E. Computer Science and Engineering", duration: "4 Years", type: "Full Time" }
@@ -201,7 +186,7 @@ async function main() {
       fees: 400000,
       rating: 4.3,
       overview: "MIT Manipal is a leading private engineering college with modern infrastructure and global alumni.",
-      images: getRandomImages(3),
+      images: "[]",
       courses: {
         create: [
           { name: "B.Tech Computer and Communication", duration: "4 Years", type: "Full Time" }
@@ -224,7 +209,7 @@ async function main() {
       fees: 120000,
       rating: 4.5,
       overview: "COEP is one of the oldest engineering colleges in Asia with a strong legacy and alumni network.",
-      images: getRandomImages(3),
+      images: "[]",
       courses: {
         create: [
           { name: "B.Tech Mechanical Engineering", duration: "4 Years", type: "Full Time" }
@@ -247,7 +232,7 @@ async function main() {
       fees: 350000,
       rating: 4.9,
       overview: "IIIT Hyderabad is synonymous with coding culture in India and boasts some of the highest placement stats.",
-      images: getRandomImages(3),
+      images: "[]",
       courses: {
         create: [
           { name: "B.Tech Computer Science and Engineering", duration: "4 Years", type: "Full Time" }
