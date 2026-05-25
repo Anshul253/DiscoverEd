@@ -1,22 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
 
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
-    if (!session || !session.user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     const { title, collegeIds } = await request.json();
     
     if (!title || !collegeIds || !Array.isArray(collegeIds) || collegeIds.length < 2 || collegeIds.length > 3) {
       return NextResponse.json({ error: "Invalid payload: Requires title and 2-3 collegeIds" }, { status: 400 });
     }
 
-    const userId = (session.user as any).id;
+    const userId = "anonymous";
 
     const savedComparison = await prisma.savedComparison.create({
       data: {
@@ -42,12 +35,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
-    if (!session || !session.user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    const userId = (session.user as any).id;
+    const userId = "anonymous";
 
     const comparisons = await prisma.savedComparison.findMany({
       where: { userId },

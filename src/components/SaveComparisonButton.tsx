@@ -29,8 +29,6 @@ export function SaveComparisonButton({ collegeIds }: SaveComparisonButtonProps) 
       if (res.ok) {
         setIsSaved(true);
         router.refresh(); // To update dashboard links
-      } else if (res.status === 401) {
-        router.push("/auth/login");
       }
     } catch (error) {
       console.error("Failed to save comparison", error);

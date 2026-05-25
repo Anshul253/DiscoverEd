@@ -1,19 +1,10 @@
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/lib/auth";
-import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { CollegeCard } from "@/components/CollegeCard";
 import { RemoveSavedButton } from "@/components/RemoveSavedButton";
 
 export default async function DashboardPage() {
-  const session = await getServerSession(authOptions);
-  
-  if (!session || !session.user) {
-    redirect("/auth/login");
-  }
-
-  const userId = (session.user as any).id;
+  const userId = "anonymous";
 
   const savedColleges = await prisma.savedCollege.findMany({
     where: { userId },

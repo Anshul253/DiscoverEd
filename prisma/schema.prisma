@@ -7,15 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id               String            @id @default(cuid())
-  email            String            @unique
-  passwordHash     String
-  createdAt        DateTime          @default(now())
-  updatedAt        DateTime          @updatedAt
-  savedColleges    SavedCollege[]
-  savedComparisons SavedComparison[]
-}
+
 
 model College {
   id               String                @id @default(cuid())
@@ -66,7 +58,6 @@ model SavedCollege {
   userId    String
   collegeId String
   createdAt DateTime @default(now())
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   college   College  @relation(fields: [collegeId], references: [id], onDelete: Cascade)
 
   @@unique([userId, collegeId])
@@ -77,7 +68,6 @@ model SavedComparison {
   userId    String
   title     String
   createdAt DateTime              @default(now())
-  user      User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
   items     SavedComparisonItem[]
 }
 

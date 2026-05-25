@@ -22,7 +22,6 @@ export function SaveButton({ collegeId, initialSaved = false }: SaveButtonProps)
           method: "DELETE",
         });
         if (res.ok) setIsSaved(false);
-        else if (res.status === 401) router.push("/auth/login");
       } else {
         const res = await fetch("/api/saved-colleges", {
           method: "POST",
@@ -30,7 +29,6 @@ export function SaveButton({ collegeId, initialSaved = false }: SaveButtonProps)
           body: JSON.stringify({ collegeId }),
         });
         if (res.ok) setIsSaved(true);
-        else if (res.status === 401) router.push("/auth/login");
       }
       router.refresh();
     } catch (error) {
